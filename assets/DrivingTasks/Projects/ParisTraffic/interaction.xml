@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interaction xmlns="http://opends.eu/drivingtask/interaction"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://opends.eu/drivingtask/interaction ../../Schema/interaction.xsd">
+
+
+	<activities>
+		<!-- <activity id="movePedestrianCrossing_1">
+			<action id="manipulateObject" delay="0" repeat="0">
+				<parameter name="id" value="PedestrianCrossing_1" />
+				<parameter name="setTranslationX" value="-74.77681" />
+				<parameter name="setTranslationY" value="-0.26786697" />
+				<parameter name="setTranslationZ" value="5.0" />
+			</action>
+		</activity>
+		<activity id="movePedestrianCrossing_1Back">
+			<action id="manipulateObject" delay="0" repeat="0">
+				<parameter name="id" value="PedestrianCrossing_1" />
+				<parameter name="setTranslationX" value="-69.77681" />
+				<parameter name="setTranslationY" value="-0.26786697" />
+				<parameter name="setTranslationZ" value="5.0" />
+			</action>
+		</activity>
+		<activity id="moveCar1">
+			<action id="moveTraffic" delay="0" repeat="4">
+				<parameter name="trafficObjectID" value="car1" />
+				<parameter name="wayPointID" value="WayPoint_6" />
+			</action>
+		</activity> -->
+		<activity id="resumeSim">
+			<action id="resumeSimulation" delay="0" repeat="0">
+			</action>
+		</activity>
+		<activity id="sendInformation">
+			<action id="manipulateObject" delay="0" repeat="0">
+				<parameter name="id" value="PedestrianCrossing_1" />
+				<parameter name="setTranslationX" value="-69.77681" />
+				<parameter name="setTranslationY" value="-0.26786697" />
+				<parameter name="setTranslationZ" value="-48.558113" />
+			</action>
+		</activity>
+	</activities>
+	
+	<triggers>
+		<!-- <trigger id="collisionWithRedBox" priority="1">
+			<activities>
+				<activity ref="moveCar1"/>
+			</activities>		
+			<condition>collideWith:redBox</condition>
+		</trigger>
+		
+		<trigger id="collisionWithBlueBox" priority="1">
+			<activities>
+				<activity ref="movePedestrianCrossing_1"/>
+			</activities>		
+			<condition>collideWith:blueBox</condition>
+		</trigger>
+		
+		<trigger id="collisionWithGreenBox" priority="1">
+			<activities>
+				<activity ref="movePedestrianCrossing_1Back"/>
+			</activities>		
+			<condition>collideWith:greenBox</condition>
+		</trigger> -->
+		
+		<trigger id="TTLTrigger" priority="1">
+			<activities>
+				<activity ref="resumeSim"/>
+			</activities>		
+			<condition>remote:resume</condition>
+		</trigger>
+		
+		<!-- <trigger id="collisionWithPoint01" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point01</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint02" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point02</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint03" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point03</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint04" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point04</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint05" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point05</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint06" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point06</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint07" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point07</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint08" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point08</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint09" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point09</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint10" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point10</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint11" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point11</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint12" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point12</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint13" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point13</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint14" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point14</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint15" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point15</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint16" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point16</condition>
+		</trigger>
+		
+		<trigger id="collisionWithPoint17" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:point17</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad01" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road01</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad02" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road02</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad03" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road03</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad04" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road04</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad05" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road05</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad06" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road06</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad07" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road07</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad08" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road08</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad09" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road09</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad10" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road10</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad11" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road11</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad12" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road12</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad13" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road13</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad14" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road14</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad15" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road15</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad16" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road16</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad17" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road17</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad18" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road18</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad19" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road19</condition>
+		</trigger>
+		
+		<trigger id="collisionWithRoad20" priority="1">
+			<activities>
+				<activity ref="sendInformation"/>
+			</activities>		
+			<condition>collideWith:road20</condition>
+		</trigger>-->
+	</triggers>
+	
+</interaction>
