@@ -102,7 +102,7 @@
 				</wayPoints>
         	</vehicle> -->
 			
-			<vehicle id="car2">
+<!-- 			<vehicle id="car2">
 				<modelPath>Models/Cars/drivingCars/CitroenC4/Car.j3o</modelPath>
 				<mass>800</mass>
 				<acceleration>3.3</acceleration>
@@ -114,7 +114,7 @@
 				<curveTension>0.05</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_1</startWayPoint>
+				<startWayPoint>WayPoint_3</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_1"><translation><vector jtype="java_lang_Float" size="3"><entry>5.2378807</entry><entry>0.07527655</entry><entry>-97.12103</entry></vector></translation><speed>50</speed></wayPoint>
 					<wayPoint id="WayPoint_2"><translation><vector jtype="java_lang_Float" size="3"><entry>-68.23155</entry><entry>0.07527568</entry><entry>-61.68747</entry></vector></translation><speed>50</speed></wayPoint>
@@ -123,7 +123,7 @@
 					<wayPoint id="WayPoint_5"><translation><vector jtype="java_lang_Float" size="3"><entry>-52.22816</entry><entry>0.07527087</entry><entry>-145.50838</entry></vector></translation><speed>50</speed></wayPoint>
 					<wayPoint id="WayPoint_6"><translation><vector jtype="java_lang_Float" size="3"><entry>-8.784735</entry><entry>0.07527647</entry><entry>-136.67879</entry></vector></translation><speed>50</speed></wayPoint>
       			</wayPoints>
-        	</vehicle>  
+        	</vehicle>   -->
 			
 			
 			<vehicle id="car3">
@@ -138,7 +138,7 @@
 				<curveTension>0.01</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_1</startWayPoint>
+				<startWayPoint>WayPoint_3</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_1"><translation><vector jtype="java_lang_Float" size="3"><entry>-67.97807</entry><entry>0.075275734</entry><entry>64.31467</entry></vector></translation><speed>50</speed></wayPoint>
 					<wayPoint id="WayPoint_2"><translation><vector jtype="java_lang_Float" size="3"><entry>-72.097595</entry><entry>0.07527636</entry><entry>-52.982384</entry></vector></translation><speed>50</speed></wayPoint>
@@ -229,7 +229,7 @@
 				<curveTension>0.05</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_4</startWayPoint>
+				<startWayPoint>WayPoint_6</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_1"><translation><vector jtype="java_lang_Float" size="3"><entry>5.2378807</entry><entry>0.07527655</entry><entry>-97.12103</entry></vector></translation><speed>50</speed></wayPoint>
 					<wayPoint id="WayPoint_2"><translation><vector jtype="java_lang_Float" size="3"><entry>-68.23155</entry><entry>0.07527568</entry><entry>-61.68747</entry></vector></translation><speed>50</speed></wayPoint>
@@ -240,7 +240,7 @@
       			</wayPoints>
         	</vehicle>
         	
-        	<pedestrian id="pedestrian01">
+        	<!-- <pedestrian id="pedestrian01">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
 				<mass>800</mass>
 				<animationStand>Stand</animationStand>
@@ -250,12 +250,12 @@
 				<curveTension>0.1</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_49</startWayPoint>
+				<startWayPoint>WayPoint_50</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_49"><translation><vector jtype="java_lang_Float" size="3"><entry>-67.5</entry><entry>0.3</entry><entry>-64.3</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_50"><translation><vector jtype="java_lang_Float" size="3"><entry>-63.6</entry><entry>0.3</entry><entry>-58.3</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 				</wayPoints>
-        	</pedestrian>
+        	</pedestrian> -->
 
         	<pedestrian id="pedestrian02">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
@@ -267,14 +267,14 @@
 				<curveTension>0.1</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_51</startWayPoint>
+				<startWayPoint>WayPoint_52</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_51"><translation><vector jtype="java_lang_Float" size="3"><entry>-76.4</entry><entry>0.3</entry><entry>-50.2</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_52"><translation><vector jtype="java_lang_Float" size="3"><entry>-69.9</entry><entry>0.3</entry><entry>-50.8</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 				</wayPoints>
         	</pedestrian>
 
-        	<pedestrian id="pedestrian03">
+        	<!-- <pedestrian id="pedestrian03">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
 				<mass>800</mass>
 				<animationStand>Stand</animationStand>
@@ -289,7 +289,7 @@
 					<wayPoint id="WayPoint_53"><translation><vector jtype="java_lang_Float" size="3"><entry>-82.2</entry><entry>0.3</entry><entry>-63.3</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_54"><translation><vector jtype="java_lang_Float" size="3"><entry>-83.0</entry><entry>0.3</entry><entry>-55.7</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 				</wayPoints>
-        	</pedestrian>
+        	</pedestrian> -->
 
         	<pedestrian id="pedestrian04">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
@@ -301,7 +301,7 @@
 				<curveTension>0.1</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_55</startWayPoint>
+				<startWayPoint>WayPoint_56</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_55"><translation><vector jtype="java_lang_Float" size="3"><entry>-27.9</entry><entry>0.3</entry><entry>-83.7</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_56"><translation><vector jtype="java_lang_Float" size="3"><entry>-24.4</entry><entry>0.3</entry><entry>-77.2</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
