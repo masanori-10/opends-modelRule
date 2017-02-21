@@ -17,17 +17,17 @@ import eu.opends.traffic.TrafficObject;
 public class ModelRule {
 	private final float DefaultAccel = -1f;
 	private final float DefaultSpeed = 50f;
-	private final float SavingSpeed = 30f;
+	private final float SavingSpeed = 20f;
 	private final float CautionSpeed = 15f;
-	private final float CurveSpeed = 15f;
+	private final float CurveSpeed = 20f;
 	private final float SensorRangeForward = 20f;
 	private final float SensorRangeSide = 3f;
 	private final float SensorRangeBehind = 10f;
 	private final float SensorRangeEmergency = 10f;
+	private final float SensorRangeHitting = 3f;
 	private final float SensorRangeCarWidth = 1.5f;
-	private final float HittingDistance = 3f;
-	private final boolean rotation = false;
-	private final boolean ondebug = true;
+	private final boolean rotation = true;
+	private final boolean ondebug = false;
 	private final boolean auto = true;
 	private boolean ondebugFlame = false;
 	private boolean inGoal = false;
@@ -38,7 +38,7 @@ public class ModelRule {
 	private SteeringCar car;
 	private List<MapObject> crossingPointList;
 	private MapObject[] route;
-	private String[] routeName = { "01", "02", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14",
+	private String[] routeName = { "01", "02", "05", "06", "07", "08", "23", "09", "10", "11", "12", "13", "14",
 			"15", "22" };
 	private int currentRoute = 0;
 	private int RouteSize;
@@ -80,8 +80,9 @@ public class ModelRule {
 				ondebugFlame = true;
 			}
 		}
-		MapObject hittingPoint;
 		if (auto) {
+			MapObject hittingPoint;
+			steeringValue = (float) getSteeringValue(route[currentRoute].getLocation());
 			if (precedingCarSensor2(true) || pedestrianSensor2(true) || trafficLightSensor2(true)) {
 				emergencyRule();
 			} else if (precedingCarSensor2(false) || pedestrianSensor2(false) || trafficLightSensor2(false)) {
@@ -93,10 +94,12 @@ public class ModelRule {
 				inGoalRule();
 			} else if ((hittingPoint = hittingNaviPointSensor()) != null) {
 				hittingNaviPointRule(hittingPoint);
+			} else if (crossingPointSensor2(true)) {
+				preparingCurveRule();
 			} else if (crossingPointSensor2(false)) {
 				crossingPointRule();
 			}
-			steeringToTarget(route[currentRoute].getLocation());
+			steering(steeringValue);
 			setSpeed(objectiveSpeed);
 		}
 	}
@@ -228,13 +231,8 @@ public class ModelRule {
 	/* 先読み型センサー */
 	private SensorPointSet getSensorPoint2(double left, double right, double forward, double behind) {
 		double alpha = Math.toRadians(getCarDirection());
-		double pivotX = car.getPosition().getX() - Math.sin(alpha) * car.getCurrentSpeedKmh() / 3;
-		double pivotZ = car.getPosition().getZ() - Math.cos(alpha) * car.getCurrentSpeedKmh() / 3;
-		if(steeringValue > 0){
-			behind += steeringValue * 30;
-		} else if (steeringValue < 0) {
-			behind -= steeringValue * 30;
-		}
+		double pivotX = car.getPosition().getX() - Math.sin(alpha) * car.getCurrentSpeedKmh() / 4;
+		double pivotZ = car.getPosition().getZ() - Math.cos(alpha) * car.getCurrentSpeedKmh() / 4;
 		SensorPointSet sps = new SensorPointSet();
 		sps.addPoint(pivotX - Math.sin(alpha) * forward - Math.sin(alpha + Math.PI / 2) * left,
 				pivotZ - Math.cos(alpha) * forward - Math.cos(alpha + Math.PI / 2) * left);
@@ -327,7 +325,7 @@ public class ModelRule {
 		float left = SensorRangeSide;
 		float right = SensorRangeCarWidth;
 		float forward = inEmergency ? SensorRangeEmergency : SensorRangeForward;
-		float behind = 0;
+		float behind = steeringValue != 0 ? SensorRangeBehind : 0;
 		for (TrafficObject pedestrian : PhysicalTraffic.getTrafficObjectList()) {
 			if (pedestrian.getName().contains("pedestrian")) {
 				if (findTarget2(pedestrian.getPosition(), left, right, forward, behind, ondebugFlame)) {
@@ -366,19 +364,23 @@ public class ModelRule {
 		return false;
 	}
 
-	private boolean crossingPointSensor2(boolean inEmergency) {
-		float left = SensorRangeCarWidth;
-		float right = SensorRangeCarWidth;
-		float forward = inEmergency ? SensorRangeEmergency : SensorRangeForward;
-		float behind = 0;
-		for (MapObject crossingPoint : crossingPointList) {
-			if (findTarget2(crossingPoint.getLocation(), left, right, forward, behind, false)) {
+	private boolean crossingPointSensor2(boolean inHitting) {
+		float left = SensorRangeSide;
+		float right = SensorRangeSide;
+		float forward = inHitting ? SensorRangeHitting : SensorRangeEmergency;
+		float behind = SensorRangeHitting;
+		int i = 0;
+		do {
+			MapObject crossingPoint = route[currentRoute - i];
+			if (!(crossingPoint.getName().contains("inRoad"))
+					&& findTarget2(crossingPoint.getLocation(), left, right, forward, behind, false)) {
 				if (ondebugFlame) {
 					System.out.println("find crossing point[" + crossingPoint.getName() + "]");
 				}
 				return true;
 			}
-		}
+			i++;
+		} while (currentRoute > 0 && i <= 1);
 		return false;
 	}
 
@@ -395,7 +397,7 @@ public class ModelRule {
 	}
 
 	private boolean hittingNaviPoint(Vector3f target) {
-		return this.car.getPosition().distance(target) < HittingDistance;
+		return this.car.getPosition().distance(target) < SensorRangeHitting;
 	}
 	/* */
 
@@ -420,6 +422,10 @@ public class ModelRule {
 		objectiveSpeed = objectiveSpeed > SavingSpeed ? SavingSpeed : objectiveSpeed;
 	}
 
+	private void preparingCurveRule() {
+		objectiveSpeed = objectiveSpeed > CurveSpeed ? CurveSpeed : objectiveSpeed;
+	}
+
 	private void hittingNaviPointRule(MapObject hittingPoint) {
 		if (hittingPoint == route[currentRoute]) {
 			objectiveSpeed = objectiveSpeed > CurveSpeed ? CurveSpeed : objectiveSpeed;
@@ -432,9 +438,6 @@ public class ModelRule {
 					inGoal = true;
 				}
 			}
-		}
-		if (currentRoute > 0 && hittingPoint == route[currentRoute - 1]) {
-			objectiveSpeed = objectiveSpeed > CurveSpeed ? CurveSpeed : objectiveSpeed;
 		}
 	}
 	/* */
@@ -470,13 +473,13 @@ public class ModelRule {
 			accelerationValue = 0;
 		} else {
 			accelerationValue = car.getCurrentSpeedKmh() < objectiveSpeed ? this.DefaultAccel : -this.DefaultAccel;
+			accelerationValue = car.getCurrentSpeedKmh() > objectiveSpeed - 1 ? 0 : accelerationValue;
 		}
 		sim.getThreeVehiclePlatoonTask().reportAcceleratorIntensity(Math.abs(accelerationValue));
 		car.setAcceleratorPedalIntensity(accelerationValue);
 	}
 
-	private void steeringToTarget(Vector3f target) {
-		steeringValue = (float) getSteeringValue(target);
+	private void steering(float steeringValue) {
 		if (ondebugFlame) {
 			System.out.println("current steering value = " + steeringValue);
 		}

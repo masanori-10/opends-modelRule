@@ -942,9 +942,9 @@
 			</rotation>
 			<translation>
 				<vector jtype="java_lang_Float" size="3">
-					<entry>132.5</entry>
+					<entry>132.8</entry>
 					<entry>-0.3</entry>
-					<entry>-49.3</entry>
+					<entry>-49.0</entry>
 				</vector>
 			</translation>
 		</model>
@@ -1016,9 +1016,9 @@
 			</rotation>
 			<translation>
 				<vector jtype="java_lang_Float" size="3">
-					<entry>75.8</entry>
+					<entry>75.1</entry>
 					<entry>-0.3</entry>
-					<entry>88.6</entry>
+					<entry>89.1</entry>
 				</vector>
 			</translation>
 		</model>
@@ -1537,6 +1537,43 @@
 					<entry>-69.3</entry>
 					<entry>-0.3</entry>
 					<entry>32.3</entry>
+				</vector>
+			</translation>
+		</model>
+		
+		<model id="point23inRoad" key="" ref="box">
+			<mass>0</mass>
+			<material>
+				<color>
+					<vector jtype="java_lang_Float" size="4">
+						<entry>0</entry>
+						<entry>0</entry>
+						<entry>1</entry>
+						<entry>1</entry>
+					</vector>
+				</color>
+			</material>
+			<visible>false</visible>
+			<collisionShape>none</collisionShape>
+			<scale>
+				<vector jtype="java_lang_Float" size="3">
+					<entry>1</entry>
+					<entry>1</entry>
+					<entry>10</entry>
+				</vector>
+			</scale>
+			<rotation quaternion="true">
+				<vector jtype="java_lang_Float" size="3">
+					<entry>0</entry>
+					<entry>0</entry>
+					<entry>0</entry>
+				</vector>
+			</rotation>
+			<translation>
+				<vector jtype="java_lang_Float" size="3">
+					<entry>27.4</entry>
+					<entry>-0.3</entry>
+					<entry>2.9</entry>
 				</vector>
 			</translation>
 		</model>
