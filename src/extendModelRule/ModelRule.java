@@ -26,8 +26,9 @@ public class ModelRule {
 	private final float SensorRangeEmergency = 10f;
 	private final float SensorRangeHitting = 3f;
 	private final float SensorRangeCarWidth = 1.5f;
+
 	private final boolean rotation = true;
-	private final boolean ondebug = false;
+	private final boolean ondebug = true;
 	private final boolean auto = true;
 	private boolean ondebugFlame = false;
 	private boolean inGoal = false;
@@ -469,7 +470,7 @@ public class ModelRule {
 		if (objectiveSpeed == 0) {
 			car.setBrakePedalIntensity(1f);
 			sim.getThreeVehiclePlatoonTask().reportBrakeIntensity(1f);
-			car.disableCruiseControlByBrake();
+			// car.disableCruiseControlByBrake();
 			accelerationValue = 0;
 		} else {
 			accelerationValue = car.getCurrentSpeedKmh() < objectiveSpeed ? this.DefaultAccel : -this.DefaultAccel;

@@ -5,9 +5,9 @@
         
         <environment>
         	<weather>
-                <snowingPercentage>-1</snowingPercentage>
-        		<rainingPercentage>-1</rainingPercentage>
-        		<fogPercentage>-1</fogPercentage>
+                <snowingPercentage>0</snowingPercentage>
+        		<rainingPercentage>0</rainingPercentage>
+        		<fogPercentage>0</fogPercentage>
         	</weather>
         	<useBloomFilter>true</useBloomFilter>
         	<useShadowFilter>false</useShadowFilter>
@@ -240,9 +240,9 @@
       			</wayPoints>
         	</vehicle>
         	
-        	<!-- <pedestrian id="pedestrian01">
+        	<pedestrian id="pedestrian01">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
-				<mass>800</mass>
+				<mass>5</mass>
 				<animationStand>Stand</animationStand>
 				<animationWalk>WalkBaked</animationWalk>
 				<scale>0.9</scale>
@@ -255,11 +255,11 @@
 					<wayPoint id="WayPoint_49"><translation><vector jtype="java_lang_Float" size="3"><entry>-67.5</entry><entry>0.3</entry><entry>-64.3</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_50"><translation><vector jtype="java_lang_Float" size="3"><entry>-63.6</entry><entry>0.3</entry><entry>-58.3</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 				</wayPoints>
-        	</pedestrian> -->
+        	</pedestrian>
 
         	<pedestrian id="pedestrian02">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
-				<mass>800</mass>
+				<mass>5</mass>
 				<animationStand>Stand</animationStand>
 				<animationWalk>WalkBaked</animationWalk>
 				<scale>0.9</scale>
@@ -274,9 +274,9 @@
 				</wayPoints>
         	</pedestrian>
 
-        	<!-- <pedestrian id="pedestrian03">
+        	<pedestrian id="pedestrian03">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
-				<mass>800</mass>
+				<mass>5</mass>
 				<animationStand>Stand</animationStand>
 				<animationWalk>WalkBaked</animationWalk>
 				<scale>0.9</scale>
@@ -289,11 +289,11 @@
 					<wayPoint id="WayPoint_53"><translation><vector jtype="java_lang_Float" size="3"><entry>-82.2</entry><entry>0.3</entry><entry>-63.3</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_54"><translation><vector jtype="java_lang_Float" size="3"><entry>-83.0</entry><entry>0.3</entry><entry>-55.7</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 				</wayPoints>
-        	</pedestrian> -->
+        	</pedestrian>
 
         	<pedestrian id="pedestrian04">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
-				<mass>800</mass>
+				<mass>5</mass>
 				<animationStand>Stand</animationStand>
 				<animationWalk>WalkBaked</animationWalk>
 				<scale>0.9</scale>
@@ -310,7 +310,7 @@
 
         	<pedestrian id="pedestrian05">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
-				<mass>800</mass>
+				<mass>5</mass>
 				<animationStand>Stand</animationStand>
 				<animationWalk>WalkBaked</animationWalk>
 				<scale>0.9</scale>
@@ -320,14 +320,14 @@
 				<pathIsVisible>false</pathIsVisible>
 				<startWayPoint>WayPoint_57</startWayPoint>
 				<wayPoints>
-					<wayPoint id="WayPoint_57"><translation><vector jtype="java_lang_Float" size="3"><entry>-160.4</entry><entry>0.3</entry><entry>-78.8</entry></vector></translation><speed>4</speed><waitingTime>10000</waitingTime></wayPoint>
-					<wayPoint id="WayPoint_58"><translation><vector jtype="java_lang_Float" size="3"><entry>-162.0</entry><entry>0.3</entry><entry>-71.5</entry></vector></translation><speed>4</speed><waitingTime>10000</waitingTime></wayPoint>
+					<wayPoint id="WayPoint_57"><translation><vector jtype="java_lang_Float" size="3"><entry>-160.4</entry><entry>0.3</entry><entry>-78.8</entry></vector></translation><speed>4</speed><waitingTime>20000</waitingTime></wayPoint>
+					<wayPoint id="WayPoint_58"><translation><vector jtype="java_lang_Float" size="3"><entry>-162.0</entry><entry>0.3</entry><entry>-71.5</entry></vector></translation><speed>4</speed><waitingTime>20000</waitingTime></wayPoint>
 				</wayPoints>
         	</pedestrian>
 
         	<pedestrian id="pedestrian06">
         		<modelPath>Models/Humans/male/male.scene</modelPath>
-				<mass>800</mass>
+				<mass>5</mass>
 				<animationStand>Stand</animationStand>
 				<animationWalk>WalkBaked</animationWalk>
 				<scale>0.9</scale>
@@ -335,7 +335,7 @@
 				<curveTension>0.1</curveTension>
 				<pathIsCycle>true</pathIsCycle>
 				<pathIsVisible>false</pathIsVisible>
-				<startWayPoint>WayPoint_59</startWayPoint>
+				<startWayPoint>WayPoint_60</startWayPoint>
 				<wayPoints>
 					<wayPoint id="WayPoint_59"><translation><vector jtype="java_lang_Float" size="3"><entry>-65.8</entry><entry>0.3</entry><entry>56.7</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
 					<wayPoint id="WayPoint_60"><translation><vector jtype="java_lang_Float" size="3"><entry>-73.3</entry><entry>0.3</entry><entry>57.1</entry></vector></translation><speed>4</speed><waitingTime>5000</waitingTime></wayPoint>
